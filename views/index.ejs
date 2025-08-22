@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <ul>
+        <% produtos.forEach(produto => { %>
+            <li><%= produto.nome %> - R$ <%= produto.preco %></li>
+        <% }) %>
+    </ul>
+
+    <h2>Adicionar Produto</h2>
+    <form action="/add" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>
