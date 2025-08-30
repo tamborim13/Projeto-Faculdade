@@ -18,9 +18,9 @@ const upload = multer({ storage });
 
 
 router.get("/", produtoController.listar);
-router.post("/add", produtoController.criar);
+router.post("/add", upload.single("imagem"), produtoController.criar); // usa multer
 router.get("/delete/:id", produtoController.remover);
-router.post("/add", upload.single("imagem"), produtoController.criar);
+
 
 
 

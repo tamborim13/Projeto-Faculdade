@@ -12,7 +12,7 @@ module.exports = {
         if (req.file) {
             imagem = req.file.filename; 
     }
-        await Produto.create({ nome, preco });
+        await Produto.create({ nome, preco, imagem });
         res.redirect("/");
 },
 
