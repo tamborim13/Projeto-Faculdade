@@ -7,8 +7,20 @@ module.exports = {
     },
     criar: async (req, res) => {
         const { nome, preco } = req.body;
+        let imagem = null
+
+        if (req.file) {
+            imagem = req.file.filename; 
+    }
         await Produto.create({ nome, preco });
         res.redirect("/");
+},
+
+    remover: async (req, res) => {
+    const{ id } = req.params; 
+    await Produto.destroy({ where: { id } }); 
+    res.redirect("/"); 
     }
+
 };
 

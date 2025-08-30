@@ -12,10 +12,34 @@
         <% }) %>
     </ul>
 
+    <ul>
+        <% produtos.forEach(produto => { %>
+        <li>
+        <%= produto.nome %> - R$ <%= produto.preco %>
+        <a href="/delete/<%= produto.id %>">Excluir</a>
+        </li>
+        <% }) %>
+    </ul>
+
+    <ul>
+            <% produtos.forEach(produto => { %>
+            <li>
+            <%= produto.nome %> - R$ <%= produto.preco %>
+            <% if (produto.imagem) { %>
+            <br>
+            <imgsrc="/uploads/<%= produto.imagem %>" width="100">
+            <% } %>
+            </li>
+            <% }) %>
+    </ul>
+
     <h2>Adicionar Produto</h2>
     <form action="/add" method="POST">
         <input type="text" name="nome" placeholder="Nome" required>
         <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+        <input type="file" name="imagem" accept="image/*">
+        <buttontype="submit">Adicionar</button>
+
         <button type="submit">Adicionar</button>
     </form>
 </body>
