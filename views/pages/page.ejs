@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Produtos</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="menu">
+        <ul>
+            <a href="#">Home</a>
+            <a href="#">Items adicionado</a>
+            <a href="#">Sobre</a>
+            <button id="home" class="button">HOME</button>
+        </ul>
+    </header>
+    <h1 class="title-principal">Lista de Produtos</h1>
+
+    <div class="produtos-grid">
+    <% produtos.forEach(produto => { %>
+      <div class="card">
+        <% if (produto.imagem) { %>
+          <img src="/uploads/<%= produto.imagem %>" alt="<%= produto.nome %>">
+        <% } else { %>
+          <img src="https://via.placeholder.com/200x180?text=Sem+Imagem" alt="Sem imagem">
+        <% } %>
+        <h3><%= produto.nome %></h3>
+        <p>R$ <%= produto.preco.toFixed(2) %></p>
+        <a href="/delete/<%= produto.id %>" class="btn btn-danger">Excluir</a>
+      </div>
+    <% }) %>
+  </div>
+
+  <h2>Adicionar Produto</h2>
+  <form action="/add" method="POST" enctype="multipart/form-data">
+    <input type="text" name="nome" placeholder="Nome" required>
+    <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+    <input type="file" name="imagem" accept="image/*">
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <script>
+    const home = document.getElementById("home")
+
+    home.onclick = function(){
+      window.location.href = "/";
+    }
+  </script>
+</body>
+</html>
+

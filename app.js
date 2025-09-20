@@ -11,8 +11,21 @@ app.use("/uploads", express.static("uploads"));
 app.use("/", produtoRoutes);
 app.use(express.static("public"))
 
+app.get("/pages", async (req, res) => {
+    try {
+        const produtos = await Produto.findAll(); // busca todos os produtos
+        res.render("pages/page", { produtos });   // passa para o EJS
+    } catch (err) {
+        console.error(err);
+        res.send("Erro ao carregar produtos");
+    }
+});
+
 
 sequelize.sync().then(() => {
     console.log("Banco de dados sincronizado!");
     app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
 });
+
+
+

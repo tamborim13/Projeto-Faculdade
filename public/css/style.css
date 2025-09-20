@@ -16,8 +16,8 @@ body{
     background-color: #444;
     padding: 15px;
 
-    display: flex;              /* transforma em flex container */
-    align-items: center;        /* centraliza verticalmente */
+    display: flex;
+    align-items: center;
 }
 
 .menu a {
@@ -29,7 +29,7 @@ body{
 
 .menu button {
     padding: 10px 20px;
-    background-color: #28a745;   /* verde */
+    background-color: #28a745;  
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -38,7 +38,7 @@ body{
     box-shadow: none;   
     outline: none;       
     border: none;
-    margin-left: 10px;   /* 👉 empurra o botão para a direita */
+    margin-left: 10px;  
     cursor: pointer;
 }
 
