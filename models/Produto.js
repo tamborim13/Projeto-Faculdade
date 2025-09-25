@@ -11,6 +11,10 @@ const Produto = sequelize.define("Produto", {
         type: DataTypes.FLOAT,
         allowNull: false
     },
+    categoria:{
+      type:DataTypes.STRING,
+      allowNull:false
+    },
       imagem: {
         type: DataTypes.STRING,   // Vai guardar apenas o nome/URL da imagem
         allowNull: true
