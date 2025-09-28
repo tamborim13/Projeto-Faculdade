@@ -101,12 +101,6 @@ h1, h2 {
   color: #34495e;
 }
 
-.card h4{
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .card p {
   font-size: 16px;
   font-weight: bold;

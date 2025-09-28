@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
+const Categoria = require("./Categoria");
 
 
 const Produto = sequelize.define("Produto", {
@@ -7,22 +8,22 @@ const Produto = sequelize.define("Produto", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    categoria_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     preco: {
         type: DataTypes.FLOAT,
         allowNull: false
-    },
-    categoria:{
-      type:DataTypes.STRING,
-      allowNull:false
     },
       imagem: {
         type: DataTypes.STRING,   // Vai guardar apenas o nome/URL da imagem
         allowNull: true
   }
-
+}, {
+    tableName:"Produtos",
+    timestamps:false
 });
-
-
 
 module.exports = Produto;
 

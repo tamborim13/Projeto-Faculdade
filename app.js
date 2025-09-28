@@ -3,6 +3,7 @@ const app = express();
 const produtoRoutes = require("./routes/produtoRoutes");
 const sequelize = require("./config/database");
 const Produto = require("./models/Produto");
+const categoriaRoutes = require("./routes/categoriaRoutes");
 
 app.set("view engine", "ejs");
 
@@ -10,6 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/uploads", express.static("uploads"));
 app.use("/", produtoRoutes);
 app.use(express.static("public"))
+app.use("/", categoriaRoutes);
 
 app.get("/pages", async (req, res) => {
     try {
