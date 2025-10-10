@@ -16,9 +16,9 @@ const produtoController = {
 
       res.render("index", { produtos, categorias });
    } catch (error) {
-  console.error("ERRO NO LISTAR:", error.message);
-  console.error(error.stack);
-  res.status(500).send("Erro ao carregar produtos");
+      console.error("ERRO NO LISTAR:", error.message);
+      console.error(error.stack);
+      res.status(500).send("Erro ao carregar produtos");
 }
 
   },

@@ -9,6 +9,12 @@ const Categoria = db.define("Categoria", {
     },
     nome: {
         type: DataTypes.STRING,
+        allowNull: false,
+        unique:true
+        
+    },
+    descricao: {
+        type: DataTypes.STRING,
         allowNull: false
     }
 }, {
